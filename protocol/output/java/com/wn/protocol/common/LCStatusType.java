@@ -20,6 +20,10 @@ public final class LCStatusType {
   public enum StatusType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     *????????0??
+     * </pre>
+     *
      * <code>dpFirst = 0;</code>
      */
     dpFirst(0),
@@ -727,6 +731,10 @@ public final class LCStatusType {
     ;
 
     /**
+     * <pre>
+     *????????0??
+     * </pre>
+     *
      * <code>dpFirst = 0;</code>
      */
     public static final int dpFirst_VALUE = 0;

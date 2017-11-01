@@ -30,9 +30,6 @@ message LocationData{
 		int32						satelliteNumber				=28;
 		bool						isValid						=29;
 		bytes						additionAlarm				=34;
-		int32						batteryPower				=36;
-		int64						electricVehicle				=38;
-		int64						alarmFilter					=40;
-		float						standardMileage				=42;
-		float						standardFuelCon				=43;
+		//repeated ???????list
+		repeated   int32            noList=35;
 }

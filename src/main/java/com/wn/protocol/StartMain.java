@@ -17,6 +17,10 @@ public class StartMain {
         LCLocationData.LocationData.Builder location = LCLocationData.LocationData.newBuilder();
         location.setAlarm(100L);
         location.setDirection(1);
+        location.addNoList(3);
+        location.addNoList(5);
+        location.addNoList(8);
+
 
         location.build();
         log.info("location  "+location);
@@ -26,6 +30,10 @@ public class StartMain {
 
         try {
             LCLocationData.LocationData locationData=LCLocationData.LocationData.parseFrom(result);
+
+
+           log.info("aaa"+ location.getAnalogAD0());
+
             log.info("反序列location  "+locationData);
         }catch (Exception ex){
 

@@ -149,29 +149,29 @@ public final class LCLocationData {
     com.google.protobuf.ByteString getAdditionAlarm();
 
     /**
-     * <code>int32 batteryPower = 36;</code>
+     * <pre>
+     *repeated ???????list
+     * </pre>
+     *
+     * <code>repeated int32 noList = 35;</code>
      */
-    int getBatteryPower();
-
+    java.util.List<java.lang.Integer> getNoListList();
     /**
-     * <code>int64 electricVehicle = 38;</code>
+     * <pre>
+     *repeated ???????list
+     * </pre>
+     *
+     * <code>repeated int32 noList = 35;</code>
      */
-    long getElectricVehicle();
-
+    int getNoListCount();
     /**
-     * <code>int64 alarmFilter = 40;</code>
+     * <pre>
+     *repeated ???????list
+     * </pre>
+     *
+     * <code>repeated int32 noList = 35;</code>
      */
-    long getAlarmFilter();
-
-    /**
-     * <code>float standardMileage = 42;</code>
-     */
-    float getStandardMileage();
-
-    /**
-     * <code>float standardFuelCon = 43;</code>
-     */
-    float getStandardFuelCon();
+    int getNoList(int index);
   }
   /**
    * Protobuf type {@code LocationData}
@@ -212,11 +212,7 @@ public final class LCLocationData {
       satelliteNumber_ = 0;
       isValid_ = false;
       additionAlarm_ = com.google.protobuf.ByteString.EMPTY;
-      batteryPower_ = 0;
-      electricVehicle_ = 0L;
-      alarmFilter_ = 0L;
-      standardMileage_ = 0F;
-      standardFuelCon_ = 0F;
+      noList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -377,29 +373,25 @@ public final class LCLocationData {
               additionAlarm_ = input.readBytes();
               break;
             }
-            case 288: {
-
-              batteryPower_ = input.readInt32();
+            case 280: {
+              if (!((mutable_bitField0_ & 0x04000000) == 0x04000000)) {
+                noList_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x04000000;
+              }
+              noList_.add(input.readInt32());
               break;
             }
-            case 304: {
-
-              electricVehicle_ = input.readInt64();
-              break;
-            }
-            case 320: {
-
-              alarmFilter_ = input.readInt64();
-              break;
-            }
-            case 341: {
-
-              standardMileage_ = input.readFloat();
-              break;
-            }
-            case 349: {
-
-              standardFuelCon_ = input.readFloat();
+            case 282: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x04000000) == 0x04000000) && input.getBytesUntilLimit() > 0) {
+                noList_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x04000000;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                noList_.add(input.readInt32());
+              }
+              input.popLimit(limit);
               break;
             }
           }
@@ -410,6 +402,9 @@ public final class LCLocationData {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x04000000) == 0x04000000)) {
+          noList_ = java.util.Collections.unmodifiableList(noList_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -426,6 +421,7 @@ public final class LCLocationData {
               com.wn.protocol.common.LCLocationData.LocationData.class, com.wn.protocol.common.LCLocationData.LocationData.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ALARM_FIELD_NUMBER = 1;
     private long alarm_;
     /**
@@ -660,50 +656,40 @@ public final class LCLocationData {
       return additionAlarm_;
     }
 
-    public static final int BATTERYPOWER_FIELD_NUMBER = 36;
-    private int batteryPower_;
+    public static final int NOLIST_FIELD_NUMBER = 35;
+    private java.util.List<java.lang.Integer> noList_;
     /**
-     * <code>int32 batteryPower = 36;</code>
+     * <pre>
+     *repeated ???????list
+     * </pre>
+     *
+     * <code>repeated int32 noList = 35;</code>
      */
-    public int getBatteryPower() {
-      return batteryPower_;
+    public java.util.List<java.lang.Integer>
+        getNoListList() {
+      return noList_;
     }
-
-    public static final int ELECTRICVEHICLE_FIELD_NUMBER = 38;
-    private long electricVehicle_;
     /**
-     * <code>int64 electricVehicle = 38;</code>
+     * <pre>
+     *repeated ???????list
+     * </pre>
+     *
+     * <code>repeated int32 noList = 35;</code>
      */
-    public long getElectricVehicle() {
-      return electricVehicle_;
+    public int getNoListCount() {
+      return noList_.size();
     }
-
-    public static final int ALARMFILTER_FIELD_NUMBER = 40;
-    private long alarmFilter_;
     /**
-     * <code>int64 alarmFilter = 40;</code>
+     * <pre>
+     *repeated ???????list
+     * </pre>
+     *
+     * <code>repeated int32 noList = 35;</code>
      */
-    public long getAlarmFilter() {
-      return alarmFilter_;
+    public int getNoList(int index) {
+      return noList_.get(index);
     }
-
-    public static final int STANDARDMILEAGE_FIELD_NUMBER = 42;
-    private float standardMileage_;
-    /**
-     * <code>float standardMileage = 42;</code>
-     */
-    public float getStandardMileage() {
-      return standardMileage_;
-    }
-
-    public static final int STANDARDFUELCON_FIELD_NUMBER = 43;
-    private float standardFuelCon_;
-    /**
-     * <code>float standardFuelCon = 43;</code>
-     */
-    public float getStandardFuelCon() {
-      return standardFuelCon_;
-    }
+    private int noListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -717,6 +703,7 @@ public final class LCLocationData {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      getSerializedSize();
       if (alarm_ != 0L) {
         output.writeInt64(1, alarm_);
       }
@@ -795,20 +782,12 @@ public final class LCLocationData {
       if (!additionAlarm_.isEmpty()) {
         output.writeBytes(34, additionAlarm_);
       }
-      if (batteryPower_ != 0) {
-        output.writeInt32(36, batteryPower_);
+      if (getNoListList().size() > 0) {
+        output.writeUInt32NoTag(282);
+        output.writeUInt32NoTag(noListMemoizedSerializedSize);
       }
-      if (electricVehicle_ != 0L) {
-        output.writeInt64(38, electricVehicle_);
-      }
-      if (alarmFilter_ != 0L) {
-        output.writeInt64(40, alarmFilter_);
-      }
-      if (standardMileage_ != 0F) {
-        output.writeFloat(42, standardMileage_);
-      }
-      if (standardFuelCon_ != 0F) {
-        output.writeFloat(43, standardFuelCon_);
+      for (int i = 0; i < noList_.size(); i++) {
+        output.writeInt32NoTag(noList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -922,25 +901,19 @@ public final class LCLocationData {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(34, additionAlarm_);
       }
-      if (batteryPower_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(36, batteryPower_);
-      }
-      if (electricVehicle_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(38, electricVehicle_);
-      }
-      if (alarmFilter_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(40, alarmFilter_);
-      }
-      if (standardMileage_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(42, standardMileage_);
-      }
-      if (standardFuelCon_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(43, standardFuelCon_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < noList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeInt32SizeNoTag(noList_.get(i));
+        }
+        size += dataSize;
+        if (!getNoListList().isEmpty()) {
+          size += 2;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        noListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1010,20 +983,8 @@ public final class LCLocationData {
           == other.getIsValid());
       result = result && getAdditionAlarm()
           .equals(other.getAdditionAlarm());
-      result = result && (getBatteryPower()
-          == other.getBatteryPower());
-      result = result && (getElectricVehicle()
-          == other.getElectricVehicle());
-      result = result && (getAlarmFilter()
-          == other.getAlarmFilter());
-      result = result && (
-          java.lang.Float.floatToIntBits(getStandardMileage())
-          == java.lang.Float.floatToIntBits(
-              other.getStandardMileage()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getStandardFuelCon())
-          == java.lang.Float.floatToIntBits(
-              other.getStandardFuelCon()));
+      result = result && getNoListList()
+          .equals(other.getNoListList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1094,20 +1055,10 @@ public final class LCLocationData {
           getIsValid());
       hash = (37 * hash) + ADDITIONALARM_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionAlarm().hashCode();
-      hash = (37 * hash) + BATTERYPOWER_FIELD_NUMBER;
-      hash = (53 * hash) + getBatteryPower();
-      hash = (37 * hash) + ELECTRICVEHICLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getElectricVehicle());
-      hash = (37 * hash) + ALARMFILTER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAlarmFilter());
-      hash = (37 * hash) + STANDARDMILEAGE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getStandardMileage());
-      hash = (37 * hash) + STANDARDFUELCON_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getStandardFuelCon());
+      if (getNoListCount() > 0) {
+        hash = (37 * hash) + NOLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getNoListList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1289,16 +1240,8 @@ public final class LCLocationData {
 
         additionAlarm_ = com.google.protobuf.ByteString.EMPTY;
 
-        batteryPower_ = 0;
-
-        electricVehicle_ = 0L;
-
-        alarmFilter_ = 0L;
-
-        standardMileage_ = 0F;
-
-        standardFuelCon_ = 0F;
-
+        noList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x04000000);
         return this;
       }
 
@@ -1321,6 +1264,8 @@ public final class LCLocationData {
 
       public com.wn.protocol.common.LCLocationData.LocationData buildPartial() {
         com.wn.protocol.common.LCLocationData.LocationData result = new com.wn.protocol.common.LCLocationData.LocationData(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.alarm_ = alarm_;
         result.status_ = status_;
         result.longitude_ = longitude_;
@@ -1347,11 +1292,12 @@ public final class LCLocationData {
         result.satelliteNumber_ = satelliteNumber_;
         result.isValid_ = isValid_;
         result.additionAlarm_ = additionAlarm_;
-        result.batteryPower_ = batteryPower_;
-        result.electricVehicle_ = electricVehicle_;
-        result.alarmFilter_ = alarmFilter_;
-        result.standardMileage_ = standardMileage_;
-        result.standardFuelCon_ = standardFuelCon_;
+        if (((bitField0_ & 0x04000000) == 0x04000000)) {
+          noList_ = java.util.Collections.unmodifiableList(noList_);
+          bitField0_ = (bitField0_ & ~0x04000000);
+        }
+        result.noList_ = noList_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1471,20 +1417,15 @@ public final class LCLocationData {
         if (other.getAdditionAlarm() != com.google.protobuf.ByteString.EMPTY) {
           setAdditionAlarm(other.getAdditionAlarm());
         }
-        if (other.getBatteryPower() != 0) {
-          setBatteryPower(other.getBatteryPower());
-        }
-        if (other.getElectricVehicle() != 0L) {
-          setElectricVehicle(other.getElectricVehicle());
-        }
-        if (other.getAlarmFilter() != 0L) {
-          setAlarmFilter(other.getAlarmFilter());
-        }
-        if (other.getStandardMileage() != 0F) {
-          setStandardMileage(other.getStandardMileage());
-        }
-        if (other.getStandardFuelCon() != 0F) {
-          setStandardFuelCon(other.getStandardFuelCon());
+        if (!other.noList_.isEmpty()) {
+          if (noList_.isEmpty()) {
+            noList_ = other.noList_;
+            bitField0_ = (bitField0_ & ~0x04000000);
+          } else {
+            ensureNoListIsMutable();
+            noList_.addAll(other.noList_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1512,6 +1453,7 @@ public final class LCLocationData {
         }
         return this;
       }
+      private int bitField0_;
 
       private long alarm_ ;
       /**
@@ -2192,132 +2134,96 @@ public final class LCLocationData {
         return this;
       }
 
-      private int batteryPower_ ;
-      /**
-       * <code>int32 batteryPower = 36;</code>
-       */
-      public int getBatteryPower() {
-        return batteryPower_;
+      private java.util.List<java.lang.Integer> noList_ = java.util.Collections.emptyList();
+      private void ensureNoListIsMutable() {
+        if (!((bitField0_ & 0x04000000) == 0x04000000)) {
+          noList_ = new java.util.ArrayList<java.lang.Integer>(noList_);
+          bitField0_ |= 0x04000000;
+         }
       }
       /**
-       * <code>int32 batteryPower = 36;</code>
+       * <pre>
+       *repeated ???????list
+       * </pre>
+       *
+       * <code>repeated int32 noList = 35;</code>
        */
-      public Builder setBatteryPower(int value) {
-        
-        batteryPower_ = value;
+      public java.util.List<java.lang.Integer>
+          getNoListList() {
+        return java.util.Collections.unmodifiableList(noList_);
+      }
+      /**
+       * <pre>
+       *repeated ???????list
+       * </pre>
+       *
+       * <code>repeated int32 noList = 35;</code>
+       */
+      public int getNoListCount() {
+        return noList_.size();
+      }
+      /**
+       * <pre>
+       *repeated ???????list
+       * </pre>
+       *
+       * <code>repeated int32 noList = 35;</code>
+       */
+      public int getNoList(int index) {
+        return noList_.get(index);
+      }
+      /**
+       * <pre>
+       *repeated ???????list
+       * </pre>
+       *
+       * <code>repeated int32 noList = 35;</code>
+       */
+      public Builder setNoList(
+          int index, int value) {
+        ensureNoListIsMutable();
+        noList_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>int32 batteryPower = 36;</code>
+       * <pre>
+       *repeated ???????list
+       * </pre>
+       *
+       * <code>repeated int32 noList = 35;</code>
        */
-      public Builder clearBatteryPower() {
-        
-        batteryPower_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long electricVehicle_ ;
-      /**
-       * <code>int64 electricVehicle = 38;</code>
-       */
-      public long getElectricVehicle() {
-        return electricVehicle_;
-      }
-      /**
-       * <code>int64 electricVehicle = 38;</code>
-       */
-      public Builder setElectricVehicle(long value) {
-        
-        electricVehicle_ = value;
+      public Builder addNoList(int value) {
+        ensureNoListIsMutable();
+        noList_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>int64 electricVehicle = 38;</code>
+       * <pre>
+       *repeated ???????list
+       * </pre>
+       *
+       * <code>repeated int32 noList = 35;</code>
        */
-      public Builder clearElectricVehicle() {
-        
-        electricVehicle_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long alarmFilter_ ;
-      /**
-       * <code>int64 alarmFilter = 40;</code>
-       */
-      public long getAlarmFilter() {
-        return alarmFilter_;
-      }
-      /**
-       * <code>int64 alarmFilter = 40;</code>
-       */
-      public Builder setAlarmFilter(long value) {
-        
-        alarmFilter_ = value;
+      public Builder addAllNoList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureNoListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, noList_);
         onChanged();
         return this;
       }
       /**
-       * <code>int64 alarmFilter = 40;</code>
+       * <pre>
+       *repeated ???????list
+       * </pre>
+       *
+       * <code>repeated int32 noList = 35;</code>
        */
-      public Builder clearAlarmFilter() {
-        
-        alarmFilter_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private float standardMileage_ ;
-      /**
-       * <code>float standardMileage = 42;</code>
-       */
-      public float getStandardMileage() {
-        return standardMileage_;
-      }
-      /**
-       * <code>float standardMileage = 42;</code>
-       */
-      public Builder setStandardMileage(float value) {
-        
-        standardMileage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float standardMileage = 42;</code>
-       */
-      public Builder clearStandardMileage() {
-        
-        standardMileage_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float standardFuelCon_ ;
-      /**
-       * <code>float standardFuelCon = 43;</code>
-       */
-      public float getStandardFuelCon() {
-        return standardFuelCon_;
-      }
-      /**
-       * <code>float standardFuelCon = 43;</code>
-       */
-      public Builder setStandardFuelCon(float value) {
-        
-        standardFuelCon_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float standardFuelCon = 43;</code>
-       */
-      public Builder clearStandardFuelCon() {
-        
-        standardFuelCon_ = 0F;
+      public Builder clearNoList() {
+        noList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
         return this;
       }
@@ -2385,7 +2291,7 @@ public final class LCLocationData {
   static {
     java.lang.String[] descriptorData = {
       "\n)core/proto/common/java/LocationData.pr" +
-      "oto\"\366\004\n\014LocationData\022\r\n\005alarm\030\001 \001(\003\022\016\n\006s" +
+      "oto\"\220\004\n\014LocationData\022\r\n\005alarm\030\001 \001(\003\022\016\n\006s" +
       "tatus\030\002 \001(\003\022\021\n\tlongitude\030\003 \001(\005\022\020\n\010latitu" +
       "de\030\004 \001(\005\022\023\n\013originalLng\030\005 \001(\005\022\023\n\013origina" +
       "lLat\030\006 \001(\005\022\016\n\006height\030\007 \001(\005\022\r\n\005speed\030\010 \001(" +
@@ -2397,12 +2303,9 @@ public final class LCLocationData {
       "lStatus\030\027 \001(\005\022\020\n\010ioStatus\030\030 \001(\005\022\021\n\tanalo" +
       "gAD0\030\031 \001(\005\022\021\n\tanalogAD1\030\032 \001(\005\022\026\n\016signalS" +
       "trength\030\033 \001(\005\022\027\n\017satelliteNumber\030\034 \001(\005\022\017" +
-      "\n\007isValid\030\035 \001(\010\022\025\n\radditionAlarm\030\" \001(\014\022\024" +
-      "\n\014batteryPower\030$ \001(\005\022\027\n\017electricVehicle\030" +
-      "& \001(\003\022\023\n\013alarmFilter\030( \001(\003\022\027\n\017standardMi" +
-      "leage\030* \001(\002\022\027\n\017standardFuelCon\030+ \001(\002B(\n\026" +
-      "com.wn.protocol.commonB\016LCLocationDatab\006" +
-      "proto3"
+      "\n\007isValid\030\035 \001(\010\022\025\n\radditionAlarm\030\" \001(\014\022\016" +
+      "\n\006noList\030# \003(\005B(\n\026com.wn.protocol.common" +
+      "B\016LCLocationDatab\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2421,7 +2324,7 @@ public final class LCLocationData {
     internal_static_LocationData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LocationData_descriptor,
-        new java.lang.String[] { "Alarm", "Status", "Longitude", "Latitude", "OriginalLng", "OriginalLat", "Height", "Speed", "Direction", "GpsDate", "Mileage", "ReceiveDate", "IsPatch", "Oil", "RecorderSpeed", "StarStatus", "StarNumber", "AlarmIdentify", "SignalStatus", "IoStatus", "AnalogAD0", "AnalogAD1", "SignalStrength", "SatelliteNumber", "IsValid", "AdditionAlarm", "BatteryPower", "ElectricVehicle", "AlarmFilter", "StandardMileage", "StandardFuelCon", });
+        new java.lang.String[] { "Alarm", "Status", "Longitude", "Latitude", "OriginalLng", "OriginalLat", "Height", "Speed", "Direction", "GpsDate", "Mileage", "ReceiveDate", "IsPatch", "Oil", "RecorderSpeed", "StarStatus", "StarNumber", "AlarmIdentify", "SignalStatus", "IoStatus", "AnalogAD0", "AnalogAD1", "SignalStrength", "SatelliteNumber", "IsValid", "AdditionAlarm", "NoList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

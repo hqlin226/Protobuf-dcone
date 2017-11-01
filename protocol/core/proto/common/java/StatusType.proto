@@ -4,6 +4,7 @@ option java_package = "com.wn.protocol.common";
 
 enum StatusType{
 
+    //????????0??
     dpFirst=0x00;
     dpfPressure	           =0x01;
     relativePressure	   =0x02;
