@@ -1,0 +1,1 @@
+protoc.exe --java_out=.  core/proto/webservice/newstatisticsdata/entity/MileageConsumption.proto

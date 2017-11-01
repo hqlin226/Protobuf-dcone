@@ -1,0 +1,38 @@
+syntax = "proto3";
+option java_outer_classname = "LCLocationData";
+option java_package = "com.wn.protocol.common";
+
+
+message LocationData{
+		int64						alarm						=1;
+		int64						status						=2;
+		int32						longitude					=3;
+		int32						latitude					=4;
+		int32						originalLng					=5;
+		int32						originalLat					=6;
+		int32						height						=7;
+		int32						speed						=8;
+		int32						direction					=9;
+		int64						gpsDate						=10;
+		int64						mileage						=11;
+		int64						receiveDate					=12;
+		bool						isPatch						=13;
+		int32						oil							=14;
+		int32						recorderSpeed				=15;
+		int32						starStatus					=20;
+		int32						starNumber					=21;
+		int32						alarmIdentify				=22;
+		int32						signalStatus				=23;
+		int32						ioStatus					=24;
+		int32						analogAD0					=25;
+		int32						analogAD1					=26;
+		int32						signalStrength				=27;
+		int32						satelliteNumber				=28;
+		bool						isValid						=29;
+		bytes						additionAlarm				=34;
+		int32						batteryPower				=36;
+		int64						electricVehicle				=38;
+		int64						alarmFilter					=40;
+		float						standardMileage				=42;
+		float						standardFuelCon				=43;
+}
